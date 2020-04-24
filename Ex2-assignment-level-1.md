@@ -26,3 +26,43 @@ In this topic, you have to build a small web API from scratch for the following 
 ## BLOCK-writeTextAnswer
 
 Here write the psuedo code you would follow to build the above API.
+
+step 1 ) Decide the Models
+	
+	*Students
+	*Mentors
+	*Todos
+
+step 2 ) Design the Schema
+
+	*Students model will have the following fields
+
+	1) Name :- type: String, required: True.
+	2) Email-Id :- type: String, required: True, use email-validator module to validate the email.
+	3) Password :- type: String, required: True, use pre-save hooks to hash password before saving. 
+		       Also include password verification method to verify the password at login.
+	4) Batch Number : type: Number, required: True.
+	
+	*Mentors model will have the following fields
+
+	1) Name :- type: String, required: True.
+	2) Email-Id :- type: String, required: True, use email-validator module to validate the email.
+	3) Password :- type: String, required: True, use pre-save hooks to hash password before saving. 
+		       Also include password verification method to verify the password at login.
+	
+	 3 mentors details pre-seeded into the database and so they don't have to signup.
+	
+
+	* To-do model will have the following fields
+
+	1) title :- type: String, required: True.
+	2) isCompleted :- type: Boolean, required: True.
+
+step 3) Decide the routes
+
+	*signup route for students.
+	*login route for both students and mentors.
+	*route for mentors only to add new tasks.
+	*common route for both students and mentors to view the tasks uploaded.
+	
+	
